@@ -41,11 +41,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste se o array retornado pela função contém dois itens dentro.
     expect(returnFunction).toHaveLength(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.
-    expect(typeof returnFunction[0, 1]).toBe('object');
+    expect(typeof returnFunction[0]).toBe('object');
+    expect(typeof returnFunction[1]).toBe('object');
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
     const paramDifferent = productDetails('Luvas', 'Vacinas');
     expect(paramDifferent).not.toMatchObject(returnFunction);
     // Teste se os dois productIds terminam com 123.
-    expect(returnFunction[0, 1]['details'].productId).toMatch('123');
+    expect(returnFunction[0]['details'].productId).toMatch('123');
+    expect(returnFunction[1]['details'].productId).toMatch('123');
   });
 });
